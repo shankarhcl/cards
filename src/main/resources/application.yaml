@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: cards
+
+  datasource:
+    url: jdbc:h2:mem:msdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE # same db used for accounts, loans, and cards ms
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    generate-unique-name: false
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+server:
+  port: 9000
+
+api:
+  version: /api/v1
